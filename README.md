@@ -1,219 +1,262 @@
-# Dennis Maina — Portfolio
+# Dennis Maina — Portfolio Website
 
-A modern, full-stack rebuild of a personal portfolio site that started life as
-plain HTML, CSS, and vanilla JavaScript. The visual design, content, and every
-original interaction (scroll-reveal animations, theme toggle, mobile menu,
-animated stats, contact-form validation, etc.) are preserved — only the
-implementation changed.
+A fast, responsive, and fully static personal portfolio built with HTML5, CSS3, and vanilla JavaScript. The website showcases my skills, projects, experience, and professional background through a modern, responsive interface.
 
-## Stack
+Built without a frontend framework, build tools, or a backend, the website can be opened locally or deployed directly to Vercel.
 
-| Layer     | Technology                                                                 |
-| --------- | --------------------------------------------------------------------------- |
-| Frontend  | React 19 + TypeScript + Vite                                               |
-| Backend   | Node.js + Express + TypeScript                                             |
-| Validation| Zod (shared logic between frontend and backend)                            |
-| Testing   | Vitest + Testing Library (frontend), Vitest + Supertest (backend)          |
-| Tooling   | ESLint (flat config), Prettier, npm workspaces                             |
+## Live Demo
 
-### Why this stack, and not something else
+- **Website:** [Visit My Portfolio](YOUR_VERCEL_URL)
+- **GitHub Repository:** [View Source Code](YOUR_GITHUB_REPOSITORY_URL)
 
-**No database.** The original site is a static personal portfolio: a fixed
-set of sections (About, Skills, Projects, Experience...) that only change
-when Dennis edits them himself, plus one contact form. None of that needs to
-be queried, filtered, or updated by a user at runtime, so a database would
-add an operational dependency (hosting, backups, migrations) with nothing to
-show for it. Content lives in [`frontend/src/data/portfolio.ts`](frontend/src/data/portfolio.ts) — a single
-typed file that is trivial to edit and is version-controlled like everything
-else. If the site ever grows a real need for dynamic, frequently-changing
-data (e.g. a blog with an admin UI), that is the point to introduce
-PostgreSQL — not before.
+> Replace the placeholder URLs above with your actual website and repository links after deployment.
 
-**A real (small) backend, not a "fake" one.** The one piece of genuine
-server-side logic the original site has is the contact form. The original
-vanilla-JS version only *pretended* to send it — it validated the fields and
-showed a fake "success" message, but no email ever went anywhere. Giving the
-form a real Express API means messages actually reach an inbox, with
-server-side validation (the client can be bypassed; the server can't),
-rate limiting, and a honeypot field against basic bots. This is deliberately
-the *only* backend responsibility — no auth, no sessions, no ORM — because
-nothing else in the brief needs one.
+## Screenshots
 
-**React + Vite over Next.js.** This site has no server-rendered routes, no
-per-request data fetching, and no SEO requirement beyond static meta tags
-(which a plain `index.html` already provides). Next.js's App Router, data
-fetching conventions, and server components solve problems this project
-doesn't have; Vite gives the same modern TypeScript + React developer
-experience with a much smaller mental model, which matters given you're
-still learning the framework.
+Here is a preview of my portfolio website.
 
-**npm workspaces over a single package.json.** `frontend` and `backend` have
-almost no shared runtime code and deploy to different places (a static host
-vs. a Node process), so keeping their dependencies separate avoids a
-frontend bundle accidentally pulling in `express`, and vice versa. A single
-root `package.json` still ties them together for convenience scripts
-(`npm run dev` starts both).
+### Homepage
 
-## Project structure
+![Portfolio Screenshot 1](screenshots/1.png)
+
+### Portfolio Preview
+
+![Portfolio Screenshot 2](screenshots/2.png)
+
+### Additional Preview
+
+![Portfolio Screenshot 3](screenshots/3.png)
+
+## Features
+
+- **Responsive Design:** Optimised for desktop, tablet, and mobile devices.
+- **Light and Dark Themes:** Switch between themes, with the selected preference remembered.
+- **Animated Interface:** Scroll-reveal animations, animated skill bars, and a statistics counter.
+- **Interactive Navigation:** Hamburger menu for smaller screens and active-section highlighting.
+- **Back-to-Top Button:** Quickly return to the top of the page.
+- **Contact Form:** Client-side input validation.
+- **Accessibility:** Semantic HTML, page landmarks, a skip link, labelled controls, and keyboard-friendly navigation.
+- **Downloadable CV:** Dedicated CV download functionality.
+- **Project Showcase:** Sections for displaying projects, technologies, and development experience.
+
+## Tech Stack
+
+| Layer           | Technology                                                          | Purpose                                                   |
+| --------------- | ------------------------------------------------------------------- | --------------------------------------------------------- |
+| Markup          | HTML5                                                               | Semantic page structure and content                       |
+| Styling         | CSS3                                                                | Responsive layouts, animations, themes, and visual design |
+| Behaviour       | Vanilla JavaScript (ES6+)                                           | Navigation, interactions, animations, and form validation |
+| Layout          | CSS Grid and Flexbox                                                | Responsive page layouts                                   |
+| Typography      | [Google Fonts — Poppins](https://fonts.google.com/specimen/Poppins) | Website typography                                        |
+| Icons           | [Font Awesome](https://fontawesome.com/) 6.6                        | Interface and social media icons                          |
+| Hosting         | [Vercel](https://vercel.com/)                                       | Static website deployment                                 |
+| Version Control | [Git](https://git-scm.com/) and [GitHub](https://github.com/)       | Source code management and version control                |
+
+## Project Structure
 
 ```text
-portfolio-website/
-├── frontend/                  React + Vite app
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── layout/        Header, Footer, BackToTop, PageLoader, ...
-│   │   │   ├── sections/      One component per page section (Hero, About, ...)
-│   │   │   └── ui/            Small reusable pieces (Button, Reveal, icons)
-│   │   ├── features/contact/  The contact form: schema, component, section
-│   │   ├── hooks/             Ported interactions (scroll-spy, reveal, ripple, ...)
-│   │   ├── services/          contactApi.ts — talks to the backend
-│   │   ├── data/portfolio.ts  ALL page content lives here
-│   │   └── styles/global.css  The original stylesheet, carried over as-is
-│   └── public/                Static assets (favicon, robots.txt)
+my-portfolio/
+├── index.html
+├── README.md
+├── .gitignore
 │
-├── backend/                    Express API (contact form only)
-│   └── src/
-│       ├── config/env.ts       Validates every environment variable at startup
-│       ├── routes/ + controllers/  HTTP layer
-│       ├── schemas/            Zod validation (the source of truth)
-│       ├── services/email/     EmailService interface + console/SMTP adapters
-│       └── middleware/         Error handling, request logging, validation
+├── assets/
+│   └── images/
+│       └── favicon.svg
 │
-├── eslint.config.js             Shared lint config for both workspaces
-├── .prettierrc.json
-└── package.json                 Root scripts (dev, build, test, lint, ...)
+├── css/
+│   └── styles.css
+│
+├── js/
+│   └── script.js
+│
+├── documents/
+│   └── Dennis-Maina-CV.pdf
+│
+└── screenshots/
+    ├── 1.png
+    ├── 2.png
+    └── 3.png
 ```
 
-## Prerequisites
+## Getting Started
 
-- **Node.js 20.19+ or 22.12+** (required by Vite 8 — check with `node -v`)
-- **npm 10+**
+You can run this project locally without installing any dependencies.
 
-## Installation
+### Prerequisites
+
+- A modern web browser.
+- A code editor such as [Visual Studio Code](https://code.visualstudio.com/) if you want to inspect or modify the source code.
+- An internet connection to load external fonts and icons.
+
+### Run Locally
+
+**Option 1: Open directly**
+
+1. Download or clone the repository.
+2. Navigate to the project folder.
+3. Open `index.html` in your browser.
+
+**Option 2: Use Visual Studio Code Live Server**
+
+1. Open the project folder in Visual Studio Code.
+2. Install the Live Server extension if it is not already installed.
+3. Right-click `index.html`.
+4. Select **Open with Live Server**.
+
+**Option 3: Use a local static server**
+
+If Node.js is installed, run the following command from the project directory:
 
 ```bash
-git clone <your-repo-url> portfolio-website
-cd portfolio-website
-npm install
+npx serve .
 ```
 
-This installs dependencies for the root, `frontend`, and `backend`
-workspaces in one step.
+Open the local URL displayed in your terminal.
 
-## Environment configuration
+## Deployment to Vercel
 
-Copy the example files and adjust as needed:
+This is a static website, so no build command or framework configuration is required.
+
+### Step 1: Push the Project to GitHub
+
+Create an empty repository on GitHub, then open a terminal in your project directory and run:
 
 ```bash
-cp backend/.env.example backend/.env
-cp frontend/.env.example frontend/.env
+git init
+git add .
+git commit -m "Initial commit: portfolio website"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git push -u origin main
 ```
 
-**Backend** (`backend/.env`) — the important ones:
+Replace `YOUR_USERNAME` and `YOUR_REPOSITORY` with your actual GitHub username and repository name.
 
-- `EMAIL_TRANSPORT` — `console` (default; prints messages to the terminal,
-  perfect for local development) or `smtp` (sends real email; **required**
-  in production).
-- `CORS_ORIGIN` — the frontend's URL. Required in production.
-- See `backend/.env.example` for the full list with explanations.
+If your project is already connected to a GitHub repository, you do not need to repeat the initialisation or remote configuration steps.
 
-**Frontend** (`frontend/.env`) — usually nothing to change in development;
-`VITE_API_URL` is only needed once you deploy (see below).
+### Step 2: Import the Repository into Vercel
 
-The server **refuses to start** in production with an incomplete or unsafe
-configuration (e.g. `NODE_ENV=production` with `EMAIL_TRANSPORT=console`)
-rather than silently dropping contact messages.
+1. Visit [Vercel New Project](https://vercel.com/new).
+2. Sign in using your GitHub account.
+3. Import your portfolio repository.
 
-## Running locally
+### Step 3: Configure the Project
+
+Use the following settings:
+
+| Setting          | Value       |
+| ---------------- | ----------- |
+| Framework Preset | Other       |
+| Root Directory   | `./`        |
+| Build Command    | Leave empty |
+| Output Directory | Leave empty |
+| Install Command  | Leave empty |
+
+No build process is required because the project uses plain HTML, CSS, and JavaScript.
+
+### Step 4: Deploy
+
+Click **Deploy** and wait for Vercel to publish the website.
+
+Your portfolio will be available at a URL similar to:
+
+`https://your-project-name.vercel.app`
+
+You can configure a custom domain under your project's Vercel settings.
+
+### Automatic Deployments
+
+Once the GitHub repository is connected to Vercel, subsequent pushes to the production branch will trigger deployments automatically.
+
+For example:
 
 ```bash
-npm run dev
+git add .
+git commit -m "Update portfolio content"
+git push origin main
 ```
 
-This starts both the backend (`http://localhost:4000`) and the frontend
-(`http://localhost:5173`) together, with Vite proxying `/api/*` requests to
-the backend — so there's nothing to configure to make the contact form work
-locally.
+Vercel can also generate preview deployments for pull requests.
 
-To run them separately: `npm run dev:backend` / `npm run dev:frontend`.
+## CV Download
 
-## Building for production
+My CV is stored in the `documents/` directory.
 
-```bash
-npm run build      # builds backend then frontend
-npm run start       # runs the built backend (serve frontend/dist with any static host)
+To make the download button work, ensure the link in `index.html` points to the correct file:
+
+```html
+<a href="documents/Dennis-Maina-CV.pdf" class="btn btn-primary" download>
+  Download CV
+</a>
 ```
 
-- `backend/dist/` — compiled Node.js output, started with `node dist/server.js`.
-- `frontend/dist/` — a static site: upload it as-is to Netlify, Vercel,
-  GitHub Pages, S3/CloudFront, or any static host. Set `VITE_API_URL` in
-  `frontend/.env` (or your host's environment settings) to the backend's
-  deployed URL before building, since the two typically live on different
-  domains in production.
+The path and filename must match the actual location and name of the PDF file.
 
-## Available npm scripts (from the repo root)
+## Contact Form
 
-| Script                | What it does                                            |
-| ---------------------- | -------------------------------------------------------- |
-| `npm run dev`          | Runs frontend + backend together, with hot reload        |
-| `npm run build`        | Builds both workspaces for production                    |
-| `npm run start`        | Runs the built backend                                   |
-| `npm run test`         | Runs backend and frontend test suites (29 tests total)   |
-| `npm run typecheck`    | Type-checks both workspaces with no emitted output       |
-| `npm run lint`         | ESLint across the whole repo                              |
-| `npm run format`       | Formats the whole repo with Prettier                      |
-| `npm run check`        | lint + typecheck + test + build, in that order            |
+The contact form currently performs client-side validation.
 
-## Important architectural decisions
+**Important:** The form does not send messages to a server or email inbox because the project does not have a backend or form-processing integration. Any success message displayed by the frontend does not confirm that a message has been delivered.
 
-- **The email service is an interface, not a hard dependency.** Controllers
-  depend on `EmailService` (`sendContactMessage`), never on Nodemailer or SMTP
-  directly. Switching to a provider API (Resend, SendGrid, SES) later means
-  writing one new class and changing one line in
-  `backend/src/services/email/index.ts` — nothing else in the app changes.
-  This is the same pattern you'd use for a payment gateway or a third-party
-  API integration.
-- **Validation lives on the server; the client mirrors it.** The Zod schema
-  in `backend/src/schemas/contact.schema.ts` is the actual contract — it's
-  what rejects bad data. The frontend's copy in
-  `frontend/src/features/contact/contact.schema.ts` exists only so the visitor
-  sees an error instantly instead of waiting for a round trip; if the two
-  ever disagree, the server always wins.
-- **Errors carry a `code`, not just a message.** Every API error response has
-  the shape `{ error: { code, message, fields? } }`. A stable `code` (like
-  `RATE_LIMITED` or `VALIDATION_ERROR`) is something frontend code can safely
-  branch on; a human-readable `message` can change wording without breaking
-  anything that depends on it.
-- **A honeypot field, not a CAPTCHA.** A hidden `website` input that real
-  visitors never see or fill in (and that's skipped in tab order) catches
-  the majority of automated spam without asking a human to solve a puzzle.
-  Combined with server-side rate limiting, this is proportionate to what a
-  portfolio contact form actually needs.
+To receive submissions, integrate a form-processing service such as [Formspree](https://formspree.io/), [Web3Forms](https://web3forms.com/), or [Getform](https://getform.io/).
 
-## How the original HTML/CSS/JS became this app
+Alternatively, provide a direct email link using the `mailto:` protocol.
 
-| Original                                            | Now                                                                 |
-| ------------------------------------------------------ | ---------------------------------------------------------------------- |
-| One long `index.html` with every section inline        | One React component per section, composed in `App.tsx`                 |
-| Content mixed into the markup                          | Extracted into `data/portfolio.ts` — edit content without touching JSX |
-| `styles.css` (hand-written CSS variables + classes)     | Carried over almost verbatim — same variables, same class names        |
-| `document.querySelector` + manual class toggling        | React state + hooks (`useScrollSpy`, `useMobileMenu`, `useTheme`, ...) |
-| `IntersectionObserver` wired up by hand for animations  | Wrapped in a reusable `<Reveal>` component / `useReveal` hook          |
-| Contact form: client-only validation, no real submission | Real Zod-validated POST to an Express API, with an actual email backend |
-| Google Fonts loaded from a CDN via `@import`            | Self-hosted via `@fontsource/poppins` (Latin subset only) — no external font request |
-| Font Awesome loaded from a CDN                          | `react-icons` — no external stylesheet, tree-shaken to only the icons used |
+## SEO and Social Sharing
 
-One small, deliberate fix: the original site's mobile hero text was hidden
-behind the fixed header (the header grows taller once JS injects the
-theme-toggle button, but the hero's top padding was a fixed value that didn't
-account for that). This rebuild adjusts that one padding value so the hero is
-fully visible on mobile — everything else about the mobile layout, including
-the original's left-aligned mobile menu, is unchanged.
+After deployment, consider adding canonical and Open Graph metadata to the `<head>` section of `index.html`.
 
-## Deployment
+Replace `YOUR_VERCEL_URL` with your actual production domain.
 
-Any platform that runs a Node.js process works for the backend (Render,
-Railway, Fly.io, a plain VPS, ...); any static host works for the frontend
-(Netlify, Vercel, GitHub Pages, Cloudflare Pages, ...). There's no coupling
-between them beyond the `VITE_API_URL` / `CORS_ORIGIN` environment variables,
-so they can live on entirely different providers.
+```html
+<link rel="canonical" href="https://YOUR_VERCEL_URL/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Dennis Maina | Developer Portfolio" />
+<meta
+  property="og:description"
+  content="Explore my projects, technical skills, and professional portfolio."
+/>
+<meta property="og:url" content="https://YOUR_VERCEL_URL/" />
+<meta
+  property="og:image"
+  content="https://YOUR_VERCEL_URL/assets/images/og-image.png"
+/>
+```
+
+For the best social-sharing experience, create an Open Graph image measuring **1200 × 630 pixels** and save it as `og-image.png` in `assets/images/`.
+
+Ensure the image exists before referencing it in your metadata.
+
+## Pre-Deployment Checklist
+
+Before sharing the portfolio with recruiters, employers, or potential clients, verify the following:
+
+- [ ] Replace all placeholder social media and contact links with the correct URLs.
+- [ ] Confirm that the CV download button points to `documents/Dennis-Maina-CV.pdf`.
+- [ ] Update project descriptions, technology tags, GitHub links, and live demos.
+- [ ] Ensure testimonials, statistics, experience, and certifications accurately represent your background.
+- [ ] Replace placeholder profile images and project visuals with appropriate images.
+- [ ] Verify that the navigation menu and theme toggle work correctly.
+- [ ] Test the contact form and clearly communicate its current limitations.
+- [ ] Test the website on desktop, tablet, and mobile devices.
+- [ ] Check for broken links and missing assets.
+- [ ] Add your actual live website URL and GitHub repository URL to this README.
+- [ ] Confirm that the screenshots displayed in this README match the current website.
+
+## Known Issues and Improvements
+
+The current implementation retains several visual and animation behaviours that may need further refinement:
+
+- **Invisible profile and project images:** Elements using `.reveal-scale` may remain invisible if the corresponding `.active` state is not defined. Consider adding the appropriate active-state CSS rule.
+- **Animation and hover interactions:** Some card animations may override hover transforms and JavaScript tilt effects. Review the animation and transform rules if these interactions are required.
+- **Skill bar animations:** Skill bars may jump directly to their target widths instead of animating smoothly. Consider adding a width transition to the `.progress` element.
+
+These behaviours should be tested against the current implementation before making changes.
+
+## License
+
+All rights reserved. This is the personal portfolio of Dennis Maina.
+
+The content, personal branding, and CV are intended for professional portfolio use. Please contact me before reproducing or redistributing these materials.

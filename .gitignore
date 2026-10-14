@@ -1,25 +1,21 @@
-# Dependencies
+# Dependencies (not used by this project, but harmless if you add tooling later)
 node_modules/
 
-# Build output
-dist/
-build/
-*.tsbuildinfo
+# Vercel CLI
+.vercel/
 
-# Environment variables (never commit real secrets)
+# Environment files
 .env
-.env.local
-.env.*.local
+.env.*
 
 # Logs
 *.log
 npm-debug.log*
 
-# Editor / OS
+# OS files
 .DS_Store
-.vscode/*
-!.vscode/extensions.json
-.idea/
+Thumbs.db
 
-# Test coverage
-coverage/
+# Editor settings
+.vscode/
+.idea/

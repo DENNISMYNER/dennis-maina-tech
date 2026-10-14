@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dennis Maina | Full Stack Developer</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Professional Full Stack Developer Portfolio showcasing web development projects, technical skills, work experience, and services."
+    />
+    <meta
+      name="keywords"
+      content="Full Stack Developer, Frontend Developer, Backend Developer, HTML, CSS, JavaScript, Portfolio, Web Developer"
+    />
+    <meta name="author" content="Dennis Maina" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dennis Maina" />
+    <meta property="og:title" content="Dennis Maina | Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Professional Full Stack Developer Portfolio showcasing web development projects, technical skills, work experience, and services."
+    />
+    <meta name="twitter:card" content="summary" />
+    <!--
+      After deploying, also add these two tags with your real Vercel URL
+      (they cannot be filled in before the URL exists):
+        <link rel="canonical" href="https://YOUR-SITE.vercel.app/" />
+        <meta property="og:url" content="https://YOUR-SITE.vercel.app/" />
+      For a link preview image, add an image (1200x630) and:
+        <meta property="og:image" content="https://YOUR-SITE.vercel.app/assets/images/og-image.png" />
+    -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+
+    <!-- Fonts & icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Site script (deferred: does not block rendering) -->
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Decorative floating shapes -->
+    <div class="floating-background" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Back to top -->
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </a>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar" aria-label="Main navigation">
+          <a href="#" class="logo"><span>D.</span>Maina</a>
+
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+              <a href="#home" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#skills" class="nav-link">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a href="#services" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="#projects" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="#experience" class="nav-link">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a href="#education" class="nav-link">Education</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <a
+            href="documents/Dennis-Maina-CV.pdf"
+            download
+            class="btn btn-primary"
+          >
+            Download CV
+          </a>
+
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch between dark and light theme"
+          >
+            ☀️
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===================== MAIN ===================== -->
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="container hero-container">
+          <div class="hero-content">
+            <p class="hero-subtitle">Hello, I'm</p>
+
+            <h1 class="hero-title" id="hero-title">Dennis Maina</h1>
+
+            <h2 class="hero-profession">Full Stack Developer</h2>
+
+            <p class="hero-description">
+              Passionate Full Stack Developer specializing in building modern,
+              scalable, responsive, and user-friendly web applications that
+              deliver exceptional user experiences and robust backend
+              performance.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">View My Work</a>
+              <a href="#contact" class="btn btn-secondary">Hire Me</a>
+            </div>
+
+            <div class="hero-socials">
+              <a href="#" aria-label="GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="X (Twitter)">
+                <i class="fab fa-x-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Email">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-image" aria-hidden="true">
+            <div class="image-wrapper">
+              <div class="profile-placeholder">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about section" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Get To Know Me</span>
+            <h2 class="section-title" id="about-title">About Me</h2>
+            <p class="section-description">
+              I am a passionate Full Stack Developer dedicated to creating fast,
+              accessible, and visually engaging web applications. My journey in
+              software development has been driven by curiosity, continuous
+              learning, and a commitment to writing clean, maintainable code.
+            </p>
+          </div>
+
+          <div class="about-content">
+            <div class="about-image" aria-hidden="true">
+              <div class="about-placeholder">
+                <i class="fa-solid fa-code"></i>
+              </div>
+            </div>
+
+            <div class="about-text">
+              <h3>Turning Ideas Into Exceptional Digital Experiences</h3>
+
+              <p>
+                Over the years, I have worked on numerous personal, freelance,
+                and collaborative projects ranging from business websites to
+                complete web applications.
+              </p>
+
+              <p>
+                My approach combines modern frontend design, efficient backend
+                architecture, and database optimization to deliver secure,
+                scalable, and high-performing solutions.
+              </p>
+
+              <p>
+                Beyond coding, I enjoy exploring emerging technologies,
+                contributing to open-source communities, and continuously
+                improving my craft through hands-on projects.
+              </p>
+
+              <div class="about-details">
+                <div class="detail-card">
+                  <i class="fa-solid fa-user" aria-hidden="true"></i>
+                  <div>
+                    <h4>Name</h4>
+                    <p>Dennis Maina</p>
+                  </div>
+                </div>
+
+                <div class="detail-card">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                  <div>
+                    <h4>Email</h4>
+                    <p>dennowmyner04@gmail.com</p>
+                  </div>
+                </div>
+
+                <div class="detail-card">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <div>
+                    <h4>Location</h4>
+                    <p>Nairobi, Kenya</p>
+                  </div>
+                </div>
+
+                <div class="detail-card">
+                  <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                  <div>
+                    <h4>Availability</h4>
+                    <p>Open to Opportunities</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section
+        class="skills section"
+        id="skills"
+        aria-labelledby="skills-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Technical Expertise</span>
+            <h2 class="section-title" id="skills-title">
+              Skills &amp; Technologies
+            </h2>
+            <p class="section-description">
+              My technical toolkit spans the entire web development lifecycle,
+              enabling me to design, develop, deploy, and maintain modern,
+              scalable applications.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <div class="skill-icon">
+                <i class="fa-solid fa-display" aria-hidden="true"></i>
+              </div>
+              <h3>Frontend Development</h3>
+              <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React.js</li>
+                <li>Bootstrap</li>
+                <li>Tailwind CSS</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-icon">
+                <i class="fa-solid fa-server" aria-hidden="true"></i>
+              </div>
+              <h3>Backend Development</h3>
+              <ul>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>REST APIs</li>
+                <li>Authentication</li>
+                <li>JWT</li>
+                <li>API Integration</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-icon">
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
+              </div>
+              <h3>Databases</h3>
+              <ul>
+                <li>MySQL</li>
+                <li>MongoDB</li>
+                <li>PostgreSQL</li>
+                <li>Firebase</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-icon">
+                <i
+                  class="fa-solid fa-screwdriver-wrench"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <h3>Developer Tools</h3>
+              <ul>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>VS Code</li>
+                <li>Figma</li>
+                <li>Netlify</li>
+                <li>Vercel</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="skill-progress">
+            <div class="progress-item">
+              <div class="progress-info">
+                <span>HTML</span>
+                <span>95%</span>
+              </div>
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-label="HTML"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="95"
+              >
+                <div class="progress html-progress"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-info">
+                <span>CSS</span>
+                <span>92%</span>
+              </div>
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-label="CSS"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="92"
+              >
+                <div class="progress css-progress"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-info">
+                <span>JavaScript</span>
+                <span>88%</span>
+              </div>
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-label="JavaScript"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="88"
+              >
+                <div class="progress js-progress"></div>
+              </div>
+            </div>
+
+            <div class="progress-item">
+              <div class="progress-info">
+                <span>Node.js</span>
+                <span>85%</span>
+              </div>
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-label="Node.js"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="85"
+              >
+                <div class="progress node-progress"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section
+        class="services section"
+        id="services"
+        aria-labelledby="services-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">What I Offer</span>
+            <h2 class="section-title" id="services-title">
+              Professional Services
+            </h2>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <h3>Frontend Development</h3>
+              <p>
+                Creating responsive, interactive, and visually appealing user
+                interfaces using modern web technologies.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+              <h3>Full Stack Development</h3>
+              <p>
+                Building complete web applications from frontend interfaces to
+                backend architecture and databases.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <i
+                class="fa-solid fa-mobile-screen-button"
+                aria-hidden="true"
+              ></i>
+              <h3>Responsive Design</h3>
+              <p>
+                Ensuring websites look and perform beautifully across desktops,
+                tablets, and smartphones.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <i class="fa-solid fa-database" aria-hidden="true"></i>
+              <h3>Database Design</h3>
+              <p>
+                Structuring secure and scalable databases for modern web
+                applications.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+              <h3>Deployment</h3>
+              <p>
+                Deploying production-ready applications using modern cloud
+                hosting platforms.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <i class="fa-solid fa-headset" aria-hidden="true"></i>
+              <h3>Maintenance &amp; Support</h3>
+              <p>
+                Providing continuous improvements, bug fixes, updates, and
+                performance optimization.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section
+        class="projects section"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Portfolio</span>
+            <h2 class="section-title" id="projects-title">Featured Projects</h2>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-image" aria-hidden="true">
+                <div class="project-placeholder">
+                  <i class="fa-solid fa-image"></i>
+                </div>
+              </div>
+
+              <div class="project-content">
+                <h3>E-Commerce Platform</h3>
+                <p>
+                  A complete online shopping platform with authentication,
+                  payment integration, inventory management, and admin
+                  dashboard.
+                </p>
+
+                <div class="project-tech">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>Node.js</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="#" class="btn btn-primary">Live Demo</a>
+                  <a href="#" class="btn btn-secondary">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image" aria-hidden="true">
+                <div class="project-placeholder">
+                  <i class="fa-solid fa-image"></i>
+                </div>
+              </div>
+
+              <div class="project-content">
+                <h3>Project Management App</h3>
+                <p>
+                  A collaborative productivity platform with task assignment,
+                  authentication, team collaboration, and analytics dashboard.
+                </p>
+
+                <div class="project-tech">
+                  <span>React</span>
+                  <span>Node</span>
+                  <span>MongoDB</span>
+                  <span>Express</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="#" class="btn btn-primary">Live Demo</a>
+                  <a href="#" class="btn btn-secondary">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image" aria-hidden="true">
+                <div class="project-placeholder">
+                  <i class="fa-solid fa-image"></i>
+                </div>
+              </div>
+
+              <div class="project-content">
+                <h3>Business Portfolio</h3>
+                <p>
+                  A high-performance corporate website featuring SEO
+                  optimization, responsive layouts, animations, and contact
+                  forms.
+                </p>
+
+                <div class="project-tech">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                </div>
+
+                <div class="project-links">
+                  <a href="#" class="btn btn-primary">Live Demo</a>
+                  <a href="#" class="btn btn-secondary">GitHub</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section
+        class="experience section"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Career Journey</span>
+            <h2 class="section-title" id="experience-title">
+              Professional Experience
+            </h2>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-content">
+                <span class="timeline-date">2024 - Present</span>
+                <h3>Remote Full Stack Developer</h3>
+                <h4>Building Scalable &amp; Modern Web Applications</h4>
+                <p>
+                  I work on the development of enterprise web applications,
+                  optimize system performance, and collaborate with
+                  multidisciplinary teams to deliver scalable software
+                  solutions.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-dot"></div>
+
+              <div class="timeline-content">
+                <span class="timeline-date">2022 - 2024</span>
+                <h3>Frontend Developer</h3>
+                <h4>Creative Digital Agency</h4>
+                <p>
+                  Built responsive websites, improved user experiences,
+                  collaborated with designers, and maintained high-performance
+                  frontend applications.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section
+        class="education section"
+        id="education"
+        aria-labelledby="education-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Academic Background</span>
+            <h2 class="section-title" id="education-title">Education</h2>
+          </div>
+
+          <div class="education-grid">
+            <article class="education-card">
+              <div class="education-icon">
+                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              </div>
+              <span class="education-year">2017 - 2021</span>
+              <h3>Bachelor of Information Technology</h3>
+              <h4>Dedan Kimathi University of Technology</h4>
+              <p>
+                Specialized in Software Engineering, Web Development, Database
+                Systems, Networking, and Human Computer Interaction.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="certifications section" aria-labelledby="certs-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Professional Growth</span>
+            <h2 class="section-title" id="certs-title">Certifications</h2>
+          </div>
+
+          <div class="certification-grid">
+            <div class="certificate-card">
+              <i class="fa-solid fa-award" aria-hidden="true"></i>
+              <h3>Meta Front-End Developer</h3>
+              <p>Coursera</p>
+            </div>
+
+            <div class="certificate-card">
+              <i class="fa-solid fa-award" aria-hidden="true"></i>
+              <h3>Google UX Design</h3>
+              <p>Google</p>
+            </div>
+
+            <div class="certificate-card">
+              <i class="fa-solid fa-award" aria-hidden="true"></i>
+              <h3>Responsive Web Design</h3>
+              <p>freeCodeCamp</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECH STACK -->
+      <section class="tech-stack section" aria-labelledby="tech-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Daily Toolkit</span>
+            <h2 class="section-title" id="tech-title">Technologies I Use</h2>
+          </div>
+
+          <div class="tech-grid">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>MongoDB</span>
+            <span>MySQL</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>VS Code</span>
+            <span>Figma</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATISTICS -->
+      <section class="stats" aria-label="Statistics">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">30+</div>
+              <p>Projects Completed</p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-number">3+</div>
+              <p>Years Experience</p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-number">20+</div>
+              <p>Happy Clients</p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-number">100%</div>
+              <p>Client Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section
+        class="testimonials section"
+        aria-labelledby="testimonials-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Testimonials</span>
+            <h2 class="section-title" id="testimonials-title">
+              What Clients Say
+            </h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <p>
+                "Dennis consistently delivered exceptional work, communicated
+                professionally, and exceeded our expectations on every
+                milestone."
+              </p>
+              <h4>Sarah Johnson</h4>
+              <span>Project Manager</span>
+            </article>
+
+            <article class="testimonial-card">
+              <p>
+                "Highly skilled, reliable, and incredibly easy to work with. I
+                would gladly recommend him for any web development project."
+              </p>
+              <h4>Michael Brown</h4>
+              <span>Startup Founder</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle"> Get In Touch </span>
+
+            <h2 class="section-title">Contact Me</h2>
+          </div>
+
+          <div class="contact-container">
+            <div class="contact-info">
+              <h3>Let's Build Something Amazing</h3>
+
+              <p>
+                I'm always interested in discussing new opportunities, freelance
+                projects, or collaborations.
+              </p>
+
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+
+                <span>
+                  <a href="mailto:dennowmyner04@gmail.com">
+                    dennowmyner04@gmail.com
+                  </a>
+                </span>
+              </div>
+
+              <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+
+                <span>
+                  <a href="tel:+254790399941"> +254 790 399 941 </a>
+                </span>
+              </div>
+
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>Nairobi, Kenya</span>
+              </div>
+            </div>
+
+            <!-- CONTACT FORM - FORMSPREE -->
+
+            <form
+              class="contact-form"
+              action="https://formspree.io/f/mqpeyvar"
+              method="POST"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                autocomplete="name"
+                required
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                autocomplete="email"
+                required
+              />
+
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="Your Message"
+                required
+              ></textarea>
+
+              <button class="btn btn-primary" type="submit">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Message
+              </button>
+            </form>
+            <!-- END CONTACT FORM -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="container">
+        <h2 class="footer-logo">Dennis Maina</h2>
+
+        <p>
+          Full Stack Developer dedicated to crafting beautiful, scalable, and
+          high-performing digital experiences.
+        </p>
+
+        <div class="footer-socials">
+          <a href="#" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="X (Twitter)">
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <p class="copyright">© 2026 Dennis Maina. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
