@@ -811,6 +811,7 @@ body.menu-open {
 .education-grid {
   display: grid;
   justify-content: center;
+  gap: 24px;
 }
 
 .education-card {
